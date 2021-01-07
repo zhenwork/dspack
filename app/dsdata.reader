@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+import sys
+import h5py
+from sys import argv
+
+fname = argv[1]
+dname = argv[2]
+
+with h5py.File(fname,"r") as f:
+    data = f[dname].value
+print(data)
+sys.exit(1)

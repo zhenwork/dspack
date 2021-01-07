@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python ${DSPACK_HOME}/scripts/dsana.stats.phenix.merge_stats.py $@

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python ${DSPACK_HOME}/scripts/dsmap.deploy.lunus.llm.py $@
+

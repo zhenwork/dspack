@@ -1,0 +1,54 @@
+Format: scalepack_merge
+Miller array info: /reg/data/ana03/scratch/zhensu/Experiment/ICH/20201225/data/G150T-3/datadir/phenix_merge_stats_2021_01_06_14_19_31_833370/exp_nosym_aniso.hkl:I,SIGI
+Observation type: xray.intensity
+Type of data: double, size=302770
+Type of sigmas: double, size=302770
+Number of Miller indices: 302770
+Anomalous flag: False
+Unit cell: (56.295, 59.716, 69.505, 90, 110.88, 90)
+Space group: I 1 2 1 (No. 5)
+
+                     ----------Merging statistics----------                    
+
+Resolution: 26.30 - 1.40
+Observations: 151403
+Unique reflections: 41960
+Redundancy: 3.6
+Completeness: 98.97%
+Mean intensity: 14.7
+Mean I/sigma(I): 7.2
+R-merge: 0.025
+R-meas:  0.029
+R-pim:   0.015
+
+Redundancies (non-anomalous):
+  1 : 1160
+  2 : 3793
+  3 : 5371
+  4 : 31636
+
+  Statistics by resolution bin:
+ d_max  d_min   #obs  #uniq   mult.  %comp       <I>  <I/sI>    r_mrg   r_meas    r_pim   cc1/2   cc_ano
+ 26.30   3.45  10965   2909    3.77 100.00      15.0     7.4    0.044    0.051    0.026   0.902   0.059
+  3.45   2.74  10633   2838    3.75  99.93      15.0     7.4    0.038    0.044    0.023   0.918   0.067
+  2.74   2.39  10492   2831    3.71  99.82      14.8     7.4    0.026    0.030    0.015   0.934   0.103
+  2.39   2.17  10422   2827    3.69  99.65      14.9     7.3    0.025    0.029    0.015   0.928   0.068
+  2.17   2.02  10228   2804    3.65  99.33      14.8     7.3    0.033    0.038    0.020   0.843  -0.133
+  2.02   1.90  10219   2817    3.63  99.26      14.7     7.2    0.029    0.033    0.017   0.831  -0.044
+  1.90   1.80   9994   2771    3.61  99.07      14.7     7.2    0.023    0.027    0.014   0.811   0.004
+  1.80   1.73   9998   2785    3.59  99.04      14.6     7.2    0.020    0.023    0.012   0.772   0.016
+  1.73   1.66   9967   2791    3.57  98.94      14.6     7.2    0.019    0.022    0.012   0.694   0.061
+  1.66   1.60   9943   2789    3.57  98.48      14.6     7.2    0.018    0.021    0.011   0.682   0.049
+  1.60   1.55   9760   2761    3.53  98.64      14.6     7.1    0.018    0.021    0.011   0.660   0.019
+  1.55   1.51   9745   2758    3.53  98.39      14.6     7.1    0.018    0.022    0.011   0.621  -0.003
+  1.51   1.47   9765   2775    3.52  98.09      14.6     7.1    0.021    0.024    0.013   0.503   0.016
+  1.47   1.43   9658   2756    3.50  97.97      14.6     7.1    0.020    0.023    0.012   0.503   0.007
+  1.43   1.40   9614   2748    3.50  97.93      14.6     7.1    0.022    0.026    0.013   0.302   0.036
+ 26.30   1.40 151403  41960    3.61  98.97      14.7     7.2    0.025    0.029    0.015   0.879   0.052
+
+References:
+  Diederichs K & Karplus PA (1997) Nature Structural Biology 4:269-275
+    (with erratum in: Nat Struct Biol 1997 Jul;4(7):592)
+  Weiss MS (2001) J Appl Cryst 34:130-135.
+  Karplus PA & Diederichs K (2012) Science 336:1030-3.
+
