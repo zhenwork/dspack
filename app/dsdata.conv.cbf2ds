@@ -18,5 +18,6 @@ import scripts.manager
 
 image_obj = scripts.manager.ImageAgent()
 image_obj.loadImage(fname)
-scripts.fsystem.PVmanager.modify(image_obj.__dict__,fsave)
-print("#### CBF to H5PY Here: %s"%fsave)
+
+scripts.fsystem.PVmanager.modify(image_obj.__dict__, fsave)
+print("#### CBF to H5PY: %s"%fsave)

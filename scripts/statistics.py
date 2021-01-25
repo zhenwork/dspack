@@ -359,3 +359,53 @@ def run_visualization(volume_file,threshold_keep=(-100,1000),radius_max_A=1.4,ra
     results["visualization_cenY"] = cenY 
     results["visualization_proj"] = proj 
     return results 
+
+import h5py
+def calculate_ccfriedel_from_map(map_file=None,pdb_file=None,rmin_A=50.,rmax_A=1.4,vmin=-100,vmax=1000):
+    path_volume = map_file
+    pdb_file = pdb_file
+    with h5py.File(path_volume) as f:
+        volume_backg_sub = f["volume_backg_sub"].value 
+        volume_backg_sub_friedel_sym = f["volume_backg_sub_friedel_sym"].value 
+        weight = f["weight"].value 
+
+    vmask = (weight>=4).astype(int)
+    volume_backg_sub[vmask==0] = -1024
+    volume_backg_sub_friedel_sym[vmask==0] = -1024
+    lattice_constant = get_pdb_lattice_from_file(pdb_file)[:6]
+    max_res, min_res, corr, number = scripts.volume.correlation(volume_backg_sub, \
+                                                                volume_backg_sub_friedel_sym, \
+                                                                lattice_constant_A_deg=lattice_constant, \
+                                                                res_shell_step_Ainv=None, \
+                                                                num_res_shell=15, \
+                                                                res_cut_off_high_A=rmax_A, \
+                                                                res_cut_off_low_A=rmin_A, \
+                                                                num_ref_uniform=True, \
+                                                                vmin=vmin, \
+                                                                vmax=vmax)
+    return corr[-1]
+
+
+def calculate_cclaue_from_map(map_file=None,pdb_file=None,rmin_A=50.,rmax_A=1.4,vmin=-100,vmax=1000):
+    path_volume = map_file
+    pdb_file = pdb_file
+    with h5py.File(path_volume) as f:
+        volume_backg_sub = f["volume_backg_sub"].value 
+        volume_backg_sub_laue_sym = f["volume_backg_sub_laue_sym"].value 
+        weight = f["weight"].value 
+
+    vmask = (weight>=4).astype(int)
+    volume_backg_sub[vmask==0] = -1024
+    volume_backg_sub_laue_sym[vmask==0] = -1024
+    lattice_constant = get_pdb_lattice_from_file(pdb_file)[:6]
+    max_res, min_res, corr, number = scripts.volume.correlation(volume_backg_sub, \
+                                                                volume_backg_sub_laue_sym, \
+                                                                lattice_constant_A_deg=lattice_constant, \
+                                                                res_shell_step_Ainv=None, \
+                                                                num_res_shell=15, \
+                                                                res_cut_off_high_A=rmax_A, \
+                                                                res_cut_off_low_A=rmin_A, \
+                                                                num_ref_uniform=True, \
+                                                                vmin=vmin, \
+                                                                vmax=vmax)
+    return corr[-1]

@@ -215,8 +215,7 @@ class PVmanager:
     @staticmethod
     def modify(params, fname):
         for idx, key in enumerate(params):
-            if idx == 0:
-                H5manager.modify(fname, key, params[key])
+            if params[key] is None:
                 continue
             H5manager.modify(fname, key, params[key])
 
