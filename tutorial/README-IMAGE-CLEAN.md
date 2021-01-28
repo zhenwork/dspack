@@ -27,7 +27,7 @@ The new file to save after the ```dsimage.clean``` step, for example, the cleane
 The dataset name of image files to be preprocessed in ```--fname``` file. Usually the ```read_dname``` is ```image_file``` because you have imported your diffraction data by running ```dsdata.import --image_file /DATA/PATH/image_*.cbf```.
 
 - ```--apply_detector_mask```:  
-The first image preprocessing step, which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (value_vmin, value_vmax), or with radial positions beyond range (radius_rmin_px, radius_rmax_px) to the detector center. The default parameters are 
+The first image preprocessing step, which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (value_vmin, value_vmax), or with radial positions beyond range (radius_rmin_px, radius_rmax_px) to the detector center. The default parameters are  
       ```
       radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000
       ```
