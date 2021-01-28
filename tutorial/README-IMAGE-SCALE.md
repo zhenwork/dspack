@@ -14,38 +14,38 @@ dsimage.scale \
 --scale_by_bragg_intensity
 (select one scale factor only)
 ```
-There are four lines with four different scale factors, but you can only enable one of them, and delete other three lines. For computational efficiency, the scale factor of the dataset will be saved as a numpy array and recorded as dname=```scale_factor``` in ```--fsave```, rather than be multipled to each image because saving images is slow. Other steps such as ```dsimage.pca``` or ```dsmap.merge``` will automatically look for the dname of ```scale_factor``` and read the scale factor out.
+There are four lines with four different scale factors, but you can only enable one of them, and delete other three lines. For computational efficiency, the scale factor of a dataset will be saved as a numpy array and recorded to ```--save_dname``` in file ```--fsave```, rather than be multipled to each image because saving new images is slow. Other steps such as [```dsimage.pca```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md) or [```dsmap.merge```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md) will automatically look for ```--save_dname``` to read out the scale factor.
 
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains all required data files. It is usually the result from the ```dsimage.clean``` step, which is the ```cleaned_data.dsdata```.
+The file name that contains your data files. It is usually the result of [```dsimage.clean```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-CLEAN.md), which is the ```cleaned_data.dsdata```.
 
 - ```--fsave```:  
-The new file to save after the ```dsimage.scale``` step, for example, the ```cleaned_data_scaled.dsdata```.
+The file name to save the result of ```dsimage.scale```, for example, you can use ```cleaned_data_scaled.dsdata``` or any other file names.
 
 - ```--read_dname```:  
-The dataset name of image files to be scaled in ```--fname```. Usually the ```read_dname``` is ```image_file``` because the default ```--save_dname``` is ```image_file``` in the previous step ```dsimage.clean```.
+The dname of diffraction image files to be scaled in ```--fname```. Usually the ```--read_dname``` is ```image_file``` because the default ```--save_dname``` is ```image_file``` in the previous step [```dsimage.clean```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-CLEAN.md).
 
 - ```--save_dname```:
-The dataset name for the calculated scale factor after ```dsimage.scale```, which is ```scale_factor``` as default. You can set other dnames, but then you need to indicate the correct dname later for other steps such as ```dsimage.pca```.
+The dname to save the calculated scale factor, which is ```scale_factor``` in default. You can use other dnames to record the scale factor, but you will need to indicate this dname later in other steps that require the scale factor, such as [```dsimage.pca```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md).
 
 - ```--scale_by_radial_profile```:  
-The scaling method (1), which uses the image radial intensity profile to scale each image, the default parameters to specify the resolution range of the radial profle are shown below.  
+The scaling method (1), which uses the image radial intensity profile to scale each image, and the default resolution range of the radial profle is shown below.  
 ```
     radius_rmin_px=None radius_rmax_px=None radius_rmin_A=50 radius_rmax_A=1.4
 ```
 
 - ```--scale_by_water_ring_intensity```:  
-The scaling method (2), which uses the average pixel intensity inside the isotropic ring, the default parameters to specify the resolution range of the isotropic ring are shown below.  
+The scaling method (2), which uses the average pixel intensity inside the isotropic ring, and the default resolution range of the isotropic ring is shown below.  
 ```
     radius_rmin_px=None radius_rmax_px=None radius_rmin_A=5 radius_rmax_A=1.82
 ```
 
 - ```--scale_by_overall_intensity```:  
-The scaling method (3), which uses the average pixel intensity inside the whole resolution range, the default parameters to specify the resolution range are shown below.  
+The scaling method (3), which uses the average pixel intensity inside the whole resolution range, and the default resolution range is shown below.  
 ```
     radius_rmin_px=None radius_rmax_px=None radius_rmin_A=50 radius_rmax_A=1.4
 ```
 
 - ```--scale_by_bragg_intensity```:  
-The scaling method (3), which uses the Bragg intensity scale factor to scale each image. No parameters are needed but be sure to run ```dsdata.import``` to import your Bragg scale factor file, for example, the dials report file as mentioned [here](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DATA-IMPORT.md).
+The scaling method (4), which uses the Bragg intensity scale factor to scale each image. No parameters are needed but be sure to use [```dsdata.import```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DATA-IMPORT.md) to import your file with the Bragg scale factor, for example, the dials report file as mentioned [here](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DATA-IMPORT.md).
