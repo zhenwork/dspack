@@ -3,14 +3,14 @@
 ### Full parameter command line:
 ```
 dsana.stats.lunus.llm \
---fname clean_data_scaled_with_pca_map.dsdata \
---lunus_data lunus_llm_refmac5 \
+--fname ./data.dsdata \
+--lunus_data lunus_llm \
 --launch_lunus_model b_factor_mode=three max_resolution_A=1.4 model=llm symop=-1
 ```
 
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains your data files. It's usually the result of [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DEPLOY.md), which is ```cleaned_data_scaled_with_pca_map.dsdata```.
+The file name that contains your data files. It's usually the result of [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DEPLOY.md), the default is ```./data.dsdata```.
 
 - ```--lunus_data```:  
 The exported files for LLM, which is the ```--lunus_data``` value in [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DEPLOY.md) step, the default is ```lunus_llm```.
@@ -23,7 +23,7 @@ Parameters for the LLM model. The ```b_factor_mode``` has three basic cases: ```
 ### Full parameter command line:
 ```
 dsana.stats.phenix.merge_stats \
---fname clean_data_scaled_with_pca_map.dsdata \
+--fname ./data.dsdata \
 --read_dname phenix_merge_stats \
 --rmax_A 1.4 \
 --nshells 15
