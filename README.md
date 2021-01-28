@@ -159,12 +159,12 @@ To use other scale factors, simply indicate the name of that scale factor, as sh
 <details><summary>Water ring scale factor</summary>
 <p>
    
-	```
-	dsimage.scale \
-		--fname cleaned_data.dsdata \
-		--fsave cleaned_data_scale_water.dsdata \
-		--scale_by_water_ring_intensity
-	```
+```
+    dsimage.scale \
+	--fname cleaned_data.dsdata \
+	--fsave cleaned_data_scale_water.dsdata \
+	--scale_by_water_ring_intensity
+```
 </p>
 </details>
 
