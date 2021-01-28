@@ -24,26 +24,32 @@ This package **dspack** is developed to analyze the diffuse scattering data. The
 
 # Requirements
 ### Conda packages
-The required conda packages as shown below. They are useful in data reading/saving, image pre-processing, and volume operations, etc. Among them, ```cbf``` is used to read the experimental data, and ```numba``` is used to speed up the process, which can be slow for lage images.
+The required conda packages as shown below. They are useful in data reading/saving, image pre-processing, and volume operations, etc. Among them, ```cbf``` is used to read the experimental data, and ```numba``` is used to speed up the process, which can be slow for large images.
+<details><summary>Conda Packages</summary>
+<p>
+   
 ```
-re
-cbf
-json
-yaml
-math
-h5py
-copy
-numpy
-scipy
-numba
-shlex
-os,sys
-mpi4py
-sklearn
-subprocess
-matplotlib
-time,datetime
+	re
+	cbf
+	json
+	yaml
+	math
+	h5py
+	copy
+	numpy
+	scipy
+	numba
+	shlex
+	os,sys
+	mpi4py
+	sklearn
+	subprocess
+	matplotlib
+	time,datetime
 ```
+</p>
+</details>
+
 ### Softwares
 First of all, no external softwares are required if the final goal is only to generate the 3D diffuse map. However, to evaluate the diffuse data, [PHENIX](https://www.phenix-online.org) is required for the calculation of CChalf, and [Lunus](https://github.com/mewall/lunus) is required to run the liquid-like motions (LLM) model. For psana users, Lunus can be enabled with simple [setups](https://github.com/zhenwork/dspack/blob/main/tutorial/README-LUNUS-PSANA.md).
 - [PHENIX](https://www.phenix-online.org)
@@ -52,58 +58,58 @@ First of all, no external softwares are required if the final goal is only to ge
 # Setup
 The setup process is simple, simply git clone the package and source the setup.sh, as shown below. The DSPACK_HOME will be added to your path. Be sure to also activate the required conda environment and softwares.
 ```
-git clone https://github.com/zhenwork/dspack.git
-cd dspack
-chmod +x setup.sh
-source setup.sh
+	git clone https://github.com/zhenwork/dspack.git
+	cd dspack
+	chmod +x setup.sh
+	source setup.sh
 ```
 
 # Workflow
 ### Data import
 This step corresponds to the ```dsdata.import``` method, which is to record the experimental data, geometry file, indexing result, and other extra files. This step won't read out the real data, but just record required files for further processing. Some files are only required for diffuse data quality analysis, and not necessary for image pre-processing, you can then run ```dsdata.import``` again to add them later. The simplified command line is shown below,
 ```
-dsdata.import \
---fname raw_data.dsdata \
---image_file /DATA/PATH/image_*.cbf \
---backg_file /DATA/PATH/blank_*.cbf \
---gxparms_file /DATA/PATH/GXPARM.XDS \
---detector_mask_file /DATA/PATH/user_mask.npy \
---extra_params /DATA/PATH/extra_json.js
+	dsdata.import \
+		--fname raw_data.dsdata \
+		--image_file /DATA/PATH/image_*.cbf \
+		--backg_file /DATA/PATH/blank_*.cbf \
+		--gxparms_file /DATA/PATH/GXPARM.XDS \
+		--detector_mask_file /DATA/PATH/user_mask.npy \
+		--extra_params /DATA/PATH/extra_json.js
 ```
 The detailed explanation of each variable, and more accepted inputs are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md).
 
 ### Image clean
 This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scale factors. The command line for ```dsimage.clean``` is shown below. Note that this process is quite slow, be sure to use MPI to speed it up by, for example, ```mpirun -n 10 dsimage.clean```
 ```
-dsimage.clean \
---fname raw_data.dsdata \
---fsave cleaned_data.dsdata \
---read_dname image_file \
---apply_detector_mask \
---remove_bad_pixels \
---subtract_background \
---parallax_correction \
---polarization_correction \
---solid_angle_correction \
---detector_absorption_correction \
---remove_bragg_peaks
+	dsimage.clean \
+		--fname raw_data.dsdata \
+		--fsave cleaned_data.dsdata \
+		--read_dname image_file \
+		--apply_detector_mask \
+		--remove_bad_pixels \
+		--subtract_background \
+		--parallax_correction \
+		--polarization_correction \
+		--solid_angle_correction \
+		--detector_absorption_correction \
+		--remove_bragg_peaks
 ```
 To turn off a substep in the pipeline, you can simply remove the name of a subsetp, such as the ```--parallax_correction``` to turn off the polarization correction step, and the ```--solid_angle_correction``` to turn off the solid angle correction. The corresponding command lines are shown below. You can also turn off multiple substeps if you want.
 <details><summary>Turn off the polarization correction</summary>
 <p>
    
 ```
-dsimage.clean \
---fname raw_data.dsdata \
---fsave cleaned_data.dsdata \
---read_dname image_file \
---apply_detector_mask \
---remove_bad_pixels \
---subtract_background \
---parallax_correction \
---solid_angle_correction \
---detector_absorption_correction \
---remove_bragg_peaks
+	dsimage.clean \
+		--fname raw_data.dsdata \
+		--fsave cleaned_data.dsdata \
+		--read_dname image_file \
+		--apply_detector_mask \
+		--remove_bad_pixels \
+		--subtract_background \
+		--parallax_correction \
+		--solid_angle_correction \
+		--detector_absorption_correction \
+		--remove_bragg_peaks
 ```
 </p>
 </details>
@@ -111,17 +117,17 @@ dsimage.clean \
 <p>
    
 ```
-dsimage.clean \
---fname raw_data.dsdata \
---fsave cleaned_data.dsdata \
---read_dname image_file \
---apply_detector_mask \
---remove_bad_pixels \
---subtract_background \
---parallax_correction \
---polarization_correction \
---detector_absorption_correction \
---remove_bragg_peaks
+	dsimage.clean \
+		--fname raw_data.dsdata \
+		--fsave cleaned_data.dsdata \
+		--read_dname image_file \
+		--apply_detector_mask \
+		--remove_bad_pixels \
+		--subtract_background \
+		--parallax_correction \
+		--polarization_correction \
+		--detector_absorption_correction \
+		--remove_bragg_peaks
 ```
 </p>
 </details>
@@ -131,18 +137,18 @@ These simplified command lines use default image processing parameters, whose fu
 <p>
    
 ```
-dsimage.clean \
---fname raw_data.dsdata \
---fsave cleaned_data.dsdata \
---read_dname image_file \
---apply_detector_mask radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000 \
---remove_bad_pixels algorithm=2 sigma=5 window_size_px=11 \
---subtract_background \
---parallax_correction \
---polarization_correction \
---solid_angle_correction \
---detector_absorption_correction \
---remove_bragg_peaks replace_by_median=True window_size_px=11
+	dsimage.clean \
+		--fname raw_data.dsdata \
+		--fsave cleaned_data.dsdata \
+		--read_dname image_file \
+		--apply_detector_mask radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000 \
+		--remove_bad_pixels algorithm=2 sigma=5 window_size_px=11 \
+		--subtract_background \
+		--parallax_correction \
+		--polarization_correction \
+		--solid_angle_correction \
+		--detector_absorption_correction \
+		--remove_bragg_peaks replace_by_median=True window_size_px=11
 ```
 </p>
 </details>
@@ -160,10 +166,10 @@ To use other scale factors, simply indicate the name of that scale factor, as sh
 <p>
    
 ```
-    dsimage.scale \
-	--fname cleaned_data.dsdata \
-	--fsave cleaned_data_scale_water.dsdata \
-	--scale_by_water_ring_intensity
+    	dsimage.scale \
+		--fname cleaned_data.dsdata \
+		--fsave cleaned_data_scale_water.dsdata \
+		--scale_by_water_ring_intensity
 ```
 </p>
 </details>
