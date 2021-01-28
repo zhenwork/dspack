@@ -19,7 +19,7 @@ There are four lines with four different scale factors, but you can only enable 
 The file name that contains all required data files. It is usually the result from the ```dsimage.clean``` step, which is the ```cleaned_data.dsdata```.
 
 - ```--fsave```:  
-The new file to save after the ```dsimage.scale``` step, for example, the cleaned_data.dsdata.
+The new file to save after the ```dsimage.scale``` step, for example, the ```cleaned_data_scaled.dsdata```.
 
 - ```--scale_by_radial_profile```:  
 The scaling method (1), which uses the image radial intensity profile to scale each image, the default parameters to specify the resolution range of the radial profle are shown below.  
