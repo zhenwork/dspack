@@ -1,24 +1,26 @@
 Some standard keywords used in the pipeline
 ======
 
+This is generally used to make ```extra_json.js``` file. Assign your own values to the following keywords and save them into the extra file as input for [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md), then the pipeline will use your assigned value automatically for image preprocessing. An example is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/example/extra_json.js).
+
 ```
 - image
 - mask
-self.peakMask = None
-self.exposure_time_s = None # second
-self.phi_deg = None          # deg
-self.wavelength_A = None   # A
-self.pixel_size_mm = None    # mm 
-self.pixel_size_um = None    # um 
-self.polarization_fr = -1   
-self.detector_distance_mm = None  # mm 
-self.detector_center_px = None    # px
-self.lattice_constant_A_deg = None   # A, deg
-self.thickness_um = None      # um
-self.thickness_mm = None      # mm
-self.absorption_coefficient_invum = None  # um^-1
-self.absorption_coefficient_invmm = None  # um^-1
-self.rotAxis = "x"
-self.Amat_invA = None              # A^-1
-self.Bmat_invA = None              # A^-1
+- peakMask
+- exposure_time_s
+- phi_deg
+- wavelength_A
+- pixel_size_mm
+- pixel_size_um
+- polarization_fr
+- detector_distance_mm
+- detector_center_px
+- lattice_constant_A_deg
+- thickness_um 
+- thickness_mm 
+- absorption_coefficient_invum 
+- absorption_coefficient_invmm 
+- rotAxis
+- Amat_invA 
+- Bmat_invA 
 ```
