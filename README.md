@@ -16,8 +16,6 @@ Get started with dspack
 		- [Lunus LLM](#lunus-llm)
 		- [Phenix CChalf](#phenix-cchalf)
 		- [CC](#cc)
-- [Example](#example)
-    
     
 # Purpose
 This package **dspack** is developed to analyze the diffuse scattering data. The main goal is to build a simple and flexible pipeline to extract 3D diffuse map from a set of 2D diffraction patterns. This package will read diffraction patterns and other supporting files, perform per-image preprocesses, map and merge 2D diffraction patterns into a 3D diffraction volume, perform operations to the diffraction volume to extract symmetrized anisotropic diffuse data, evaluate the diffuse data quality, and model the diffuse map with the liquid-like motions (LLM) model. This package supports options to turn on or turn off each substep, and also accepts different input variables from users, enabling us to compare various data processing choices.
@@ -155,12 +153,12 @@ These simplified command lines use default image processing parameters, whose fu
 
 ### Image scale
 Here we provide four different per-image scale factor factors, that are radial profile, water ring, overall, and Bragg scale factors. The standard pipeline uses the radial profile scale factor, whose command line is shown below.  
-	```
+```
 	dsimage.scale \
 	--fname cleaned_data.dsdata \
 	--fsave cleaned_data_scaled.dsdata \
 	--scale_by_radial_profile
-	```
+```
 To use other scale factors, simply indicate the name of that scale factor, as shown below. However, you need extra files (such as the dials report file as mentioned in [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md)) to provide the Bragg intensity scale factor.
 <details><summary>Water ring scale factor</summary>
 <p>
@@ -198,10 +196,106 @@ To use other scale factors, simply indicate the name of that scale factor, as sh
 These are simplified command lines with default parameters, the full-parameter command lines and explaination for each input parameter are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md).
 
 ### Radial profile variance removal
+This step removes the variance of the radial intensity profiles of one dataset. The variance is calculated using three largest PCA components, first introduced by [Peck et al.](https://doi.org/10.1107/S2052252518001124) The command line is shown below, and the detailed explanation for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md).
+```
+	dsimage.pca \
+	--fname clean_data_scaled.dsdata \
+	--fsave clean_data_scaled_with_pca.dsdata \
+	--radial_pca_subtraction
+```
+Up to now, all **six** image preprocessing steps have been applied to every image, followed by the 3D merging step as shown below.
+
 ### Merge to volume
+This step merges all preprocessed diffraction patterns into a 3D diffraction volume. The command line is shown below, and the detailed explaination for each parameter is [here](https://github.com/zhenwork/dspack/edit/main/tutorial/README-VOLUME-MERGE.md).
+```
+	dsmap.merge \
+	--fname clean_data_scaled_with_pca.dsdata \
+	--fsave clean_data_scaled_with_pca_map.dsdata \
+	--merge_to_volume
+```
+
 ### Volume operations
+This step performs Laue-/Friedel symmetrization and isotropic component subtraction to the raw diffraction volume from the previous step ```dsmap.merge```. The command line is shown below, and detailed explanation is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-OPERATE.md).
+```
+	dsmap.operate \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	--laue_symmetrization \
+	--friedel_symmetrization \
+	--background_subtraction
+```
+
 ### Statistics
 ##### Lunus LLM
+To run the LLM model, we need to provide the PDB file, export the 3D diffuse map to Lunus accepted format. The command lines are shown below, and the detailed explaination for data deploy and analysis are [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DEPLOY.md) and [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DSANA.md).
+<details><summary>Import the PDB file</summary>
+<p>
+   
+```
+	dsdata.import \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	pdb_refmac5=/PATH/TO/PDB.pdb 
+```
+</p>
+</details>
+<details><summary>Export diffuse map in Lunus format</summary>
+<p>
+   
+```
+	dsmap.deploy.lunus.llm \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	--pdb_dname pdb_refmac5 \
+	--lunus_data lunus_llm_refmac5
+```
+</p>
+</details>
+<details><summary>Run LLM model</summary>
+<p>
+   
+```
+	dsana.stats.lunus.llm \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	--lunus_data lunus_llm_refmac5 \
+	--launch_lunus_model b_factor_mode=aniso
+```
+</p>
+</details>
 ##### Phenix CChalf
+Similarly, to run PHENIX for CChalf, you need to import the PDB file, export the unsymmetrized anisotropic map to PHENIX accepted format. The command lines are shown below, and the detailed explaination for data deploy and analysis are [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DEPLOY.md) and [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DSANA.md).
+<details><summary>Import the PDB file</summary>
+<p>
+   
+```
+	dsdata.import \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	pdb_refmac5=/PATH/TO/PDB.pdb 
+```
+</p>
+</details>
+<details><summary>Export diffuse map in Lunus format</summary>
+<p>
+   
+```
+	dsmap.deploy.phenix.merge_stats \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	--pdb_dname pdb_refmac5
+```
+</p>
+</details>
+<details><summary>Run LLM model</summary>
+<p>
+   
+```
+	dsana.stats.phenix.merge_stats \
+	--fname clean_data_scaled_with_pca_map.dsdata
+```
+</p>
+</details>
+
 ##### CC
-# Example
+To calculate the correlation coefficient (CC) between diffuse maps of two datasets, you can simply use any python scripts with general CC functions, however, you can only use diffuse intensities in common voxels of two diffuse maps. The command line for this calculation is shown below, and detailed parameters are discussed [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-STATS.md).
+```
+	dsana.stats.cc.map \
+	--fname clean_data_scaled_with_pca_map.dsdata \
+	--read_dname merge_volume \
+	--pdb_dname pdb_refmac5
+```
