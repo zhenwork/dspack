@@ -4,10 +4,10 @@ dsana.stats.cc.map
 ### Full parameter command line:
 ```
 dsana.stats.cc.map \
---fname clean_data_scaled_with_pca_map_1.dsdata clean_data_scaled_with_pca_map_2.dsdata clean_data_scaled_with_pca_map_3.dsdata \
---fsave cc_map.out \
+--fname map_1.dsdata map_2.dsdata map_3.dsdata \
+--fsave dsana.stats.cc.map.out \
 --read_dname merge_volume \
---pdb_dname pdb_refmac5 \
+--pdb_dname pdb_file \
 --nshells 15 \
 --vmin -100 \
 --vmax 1000 \
@@ -18,10 +18,10 @@ Note that the comparsion is performed for the symmetrized anisotropic diffuse ma
 
 ### Description of each input:  
 - ```--fname```:  
-A list of files to compare, such as ```clean_data_scaled_with_pca_map.dsdata``` files from multiple datasets or various processing choices.
+A list of files to compare, such as diffuse data files after the [```dsmap.operate```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-OPERATE.md) step for multiple datasets or various processing choices.
 
 - ```--fsave```:  
-The CC statistics for N files will be kept in a N\*N matrix, and saved to ```--fsave``` file as a numpy array.
+The CC statistics for N files will be kept in a N\*N matrix, and saved to ```--fsave``` file as a numpy array. The default is ```dsana.stats.cc.map.out```.
 
 - ```--read_dname```:
 The dname to compare in ```--fname``` files, the default is ```merge_volume```.
