@@ -4,8 +4,8 @@ dsimage.pca
 ### Full parameter command line:
 ```
 dsimage.pca \
---fname clean_data_scaled.dsdata \
---fsave clean_data_scaled_with_pca.dsdata \
+--fname ./data.diffuse \
+--fsave None \
 --read_dname image_file \
 --save_dname None \
 --per_image_multiply_scale scale_factor \
@@ -13,10 +13,10 @@ dsimage.pca \
 ```
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains your data files. It's usually the result of [```dsimage.scale```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md), which is the ```cleaned_data_scaled.dsdata```.
+The file name that contains your data files. It's usually the result of [```dsimage.scale```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md), the default is the ```./data.diffuse```.
 
 - ```--fsave```:  
-The new file to save the result of ```dsimage.pca```, for example, the ```cleaned_data_scaled_with_pca.dsdata```.
+The new file to save the result of ```dsimage.pca```, for example, the ```cleaned_data_scaled_with_pca.dsdata```. The default is the same as ```--fname```.
 
 - ```--read_dname```:  
 The dname of image files to be processed in ```--fname```. The default ```--read_dname``` is ```image_file```.
