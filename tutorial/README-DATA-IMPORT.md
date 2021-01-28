@@ -39,7 +39,6 @@ The backup method for users with other important inputs that are not mentioned b
 
 - ```[variable=value]```:
 This is another backup method for users with other files as input. Different from the ```--extra_params``` input, parameters input from ```[variable=value]``` won't be applied for diffraction pattern analysis. It will only be saved to a h5py dataset name for further usage, such as the PDB file. The most common example is shown below.
-
 ```
 dsdata.import \
 --fname raw_data.dsdata\
