@@ -18,16 +18,16 @@ dsimage.clean \
 ```
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains all required data files. It is usually the result from the ```dsdata.import``` step, which is the raw_data.dsdata.
+The file name that contains all required data files. It is usually the result from the ```dsdata.import``` step, which is the ```raw_data.dsdata```.
 
 - ```--fsave```:  
-The new file to save after the ```dsimage.clean``` step, for example, the cleaned_data.dsdata.
+The new file to save after the ```dsimage.clean``` step, for example, the ```cleaned_data.dsdata```.
 
 - ```--read_dname```:  
 The dataset name of image files to be preprocessed in ```--fname``` file. Usually the ```read_dname``` is ```image_file``` because you have imported your diffraction data by running ```dsdata.import --image_file /DATA/PATH/image_*.cbf```.
 
 - ```--apply_detector_mask```:  
-The image preprocessing step (1), which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (value_vmin, value_vmax), or with radial positions beyond range (radius_rmin_px, radius_rmax_px) to the detector center. If you have and imported the background diffraction patterns, they will automatically be processed in the same manner. The default parameters are shown below,  
+The image preprocessing step (1), which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (```value_vmin```, ```value_vmax```), or with radial positions beyond range (```radius_rmin_px```, ```radius_rmax_px```) to the detector center. If you have and imported the background diffraction patterns, they will automatically be processed in the same manner. The default parameters are shown below,  
       ```
       radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000
       ```
@@ -53,6 +53,6 @@ The image preprocessing step (4-4), which applies the detector absorption correc
 
 - ```--remove_bragg_peaks```:  
 The image preprocessing step (5), which predicts Bragg peak positions and clean them either by replacing with median intensity or by filtering them all. If ```replace_by_median``` is enabled, the replaced pixel value will be the median intensity inside a square box with size (```window_size_px```,```window_size_px```). Please note that all Bragg peaks will finally be filtered out before being merged into the 3D diffraction volume, replacing by median is just used to evaluate more accurate radial intensity profiles of each pattern, and better visualizations. It's totally acceptable if you don't want to replace by median, and it will cause little changes to the radial profile scale factor only. The default parameters are shown below,  
-      ```
+```
       replace_by_median=True window_size_px=11
-      ```
+```
