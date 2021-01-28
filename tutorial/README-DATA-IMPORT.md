@@ -17,7 +17,7 @@ dsdata.import \
 ```
 ### Description of each input:  
 - ```--fname```:  
-All input data files will be recorded to file ```--fname```. If the ```--fname``` already exists, then it won't be rewritten but just updated, so you can run ```dsdata.import``` multiple times to add necessary data files whenever you need.  
+All input data files will be recorded to file ```--fname```. If the ```--fname``` already exists, then it won't be rewritten but just updated, so you can run ```dsdata.import``` multiple times to add necessary data files whenever you need. The default is ```./data.dsdata```.  
 
 - ```--image_file```:  
 The experimental crystal diffraction data files. The default data format is CBF, but h5py, pickle files are also acceptable, though you need to save your data with the [standard parameter keywords](https://github.com/zhenwork/dspack/blob/main/tutorial/README-STANDARD-KEYWORDS.md) for ```dspack```.  
@@ -40,8 +40,8 @@ The backup method for users with other important inputs that are not mentioned b
 - ```[variable=value]```:
 This is another backup method for users with more files as input. Different from the ```--extra_params``` input, parameters in ```[variable=value]``` won't be applied for every diffraction pattern. It will only be recorded to the ```--fname``` file for further usage, such as multiple PDB files. An example is shown below.
 ```
-dsdata.import \
---fname raw_data.dsdata \
-pdb_phenix=/PATH/TO/phenix.pdb \
-pdb_refmac5=/PATH/TO/refmac5.pdb
+  dsdata.import \
+  --fname raw_data.dsdata \
+  pdb_phenix=/PATH/TO/phenix.pdb \
+  pdb_refmac5=/PATH/TO/refmac5.pdb
 ```
