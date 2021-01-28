@@ -31,8 +31,12 @@ The dname of scale factor to use for image scaling, which is ```scale_factor``` 
 - ```--select_image_idx```:  
 The selected image to merge into a volume, for example, ```--select_image_idx 50-100,200-300``` will merge images with index from ```[50,100]``` and ```[200,300]```, inclusively. 
 
-- ```merge_to_volume```:  
+- ```--merge_to_volume```:  
 To turn on the merging algorithm. The diffraction patterns will be merged into a volume with size (```volume_size_vx```,```volume_size_vx```,```volume_size_vx```). The center of the volume will be (```volume_center_vx```,```volume_center_vx```,```volume_center_vx```), and the oversampling rate to Miller indices is ```oversample```. The default parameters are
 ```
   volume_center_vx=60 volume_size_vx=121 oversample=1
+```
+which means that each index of H, K, and L ranges from -60 to 60. However, for visualization, we use a larger volume with parameters as follows,
+```
+  volume_center_vx=180 volume_size_vx=361 oversample=3
 ```
