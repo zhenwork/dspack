@@ -29,7 +29,7 @@ The dataset name of image files to be preprocessed in ```--fname``` file. Usuall
 - ```--apply_detector_mask```:  
 The first image preprocessing step, which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (value_vmin, value_vmax), or with radial positions beyond range (radius_rmin_px, radius_rmax_px) to the detector center. The default parameters are 
 ```
-radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000
+      radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000
 ```
 - ```--remove_bad_pixels```:  
 
