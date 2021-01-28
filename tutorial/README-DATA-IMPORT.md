@@ -4,7 +4,7 @@ dsdata.import
 ### Full parameter command line:
 ```
 dsdata.import \
---fname raw_data.dsdata \
+--fname ./data.dsdata \
 --image_file /PATH/TO/image_*.cbf \
 --backg_file /PATH/TO/blank_*.cbf \
 --gxparms_file /PATH/TO/GXPARM.XDS \
