@@ -4,7 +4,7 @@ dsmap.operate
 ### Full parameter command line:
 ```
 dsmap.operate \
---fname clean_data_scaled_with_pca_map.dsdata \
+--fname ./data.dsdata \
 --read_dname merge_volume \
 --laue_symmetrization operator="+++,+-+,---,-+-" \
 --friedel_symmetrization \
