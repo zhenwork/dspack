@@ -13,19 +13,19 @@ dsimage.pca \
 ```
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains all required data files. It is usually the result from the ```dsimage.scale``` step, which is the ```cleaned_data_scaled.dsdata```.
+The file name that contains your data files. It's usually the result of [```dsimage.scale```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md), which is the ```cleaned_data_scaled.dsdata```.
 
 - ```--fsave```:  
-The new file to save after the ```dsimage.pca``` step, for example, the ```cleaned_data_scaled_with_pca.dsdata```.
+The new file to save the result of ```dsimage.pca```, for example, the ```cleaned_data_scaled_with_pca.dsdata```.
 
 - ```--read_dname```:  
-The dataset name of image files to be processed in ```--fname```. The default ```--read_dname``` is ```image_file```.
+The dname of image files to be processed in ```--fname```. The default ```--read_dname``` is ```image_file```.
 
 - ```--save_dname```:
-The dataset name for the processed image files after ```dsimage.pca```, which is the same as ```--read_dname``` in default. You can set other dnames, but then you need to indicate the correct dname later for other steps such as ```dsmap.merge```.
+The dname to record the processed image files, which is the same as ```--read_dname``` in default. You can set other dnames, but then you will need to indicate the correct dname later for other steps such as [```dsmap.merge```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md).
 
 - ```--per_image_multiply_scale```:  
 The dname of scale factor to use for image scaling, which is ```scale_factor``` in default.
 
 - ```radial_pca_subtraction```:  
-The radial profile variance removal step. The input parameter is to specify the number of pca components to remove, the default number is ```num_pca=3```.
+The radial profile variance removal step. The input parameter can specify the number of pca components to remove, the default number is ```num_pca=3```.
