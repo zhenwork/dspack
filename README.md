@@ -73,7 +73,7 @@ dsdata.import \
 The detailed explanation of each variable, and more accepted inputs are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md).
 
 ### Image clean
-This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scale factors. The command line for ```dsimage.clean``` is shown below. Note that this process is quite slow, be sure to use MPI to speed it up by, for example, ```mpirun -n 10 dsimage.clean *** ```
+This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scale factors. The command line for ```dsimage.clean``` is shown below. Note that this process is quite slow, be sure to use MPI to speed it up by, for example, ```mpirun -n 10 dsimage.clean```
 ```
 dsimage.clean \
 --fname raw_data.dsdata \
@@ -148,7 +148,25 @@ dsimage.clean \
 </details>
 
 ### Image scale
-
+Here we provide four different per-image scale factor factors, that are radial profile, water ring, overall, and Bragg scale factors. The standard pipeline uses the radial profile scale factor, whose command line is shown below. 
+	```
+	dsimage.scale \
+		--fname cleaned_data.dsdata \
+		--fsave cleaned_data_scale_water.dsdata \
+		--scale_by_radial_profile
+	```
+To use other scale factors, simply indicate the name of that scale factor, as shown below. However, you need extra files (such as the dials report file as mentioned in [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md)) to provide the Bragg intensity scale factor.
+<details><summary>Water ring scale factor</summary>
+<p>
+   
+	```
+	dsimage.scale \
+		--fname cleaned_data.dsdata \
+		--fsave cleaned_data_scale_water.dsdata \
+		--scale_by_water_ring_intensity
+	```
+</p>
+</details>
 
 ### Radial profile variance removal
 ### Merge to volume
