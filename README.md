@@ -193,7 +193,7 @@ These are simplified command lines with default parameters, the full-parameter c
 
 
 ### Radial profile variance removal
-This step removes the variance of the radial intensity profiles of a dataset. The radial profile variance is calculated using three largest PCA components, first introduced by [Peck et al.](https://doi.org/10.1107/S2052252518001124) The command line is shown below, and the detailed explanation for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md)
+This step removes the variance of the radial intensity profiles of a dataset. The radial profile variance is calculated using three largest PCA components, first introduced by [Peck et al.](https://doi.org/10.1107/S2052252518001124) The command line is shown below, and the detailed explanation for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md).
 ```
 dsimage.pca \
 --fname clean_data_scaled.dsdata \
@@ -203,7 +203,7 @@ dsimage.pca \
 Up to now, all **six** image preprocessing steps have been applied to every image, we will then merge them to the 3D reciprocal space.
 
 ### Merge to volume
-This step merges all preprocessed diffraction patterns into a 3D diffraction volume. The command line is shown below, and the detailed explaination for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md)  
+This step merges all preprocessed diffraction patterns into a 3D diffraction volume. The command line is shown below, and the detailed explaination for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md).  
 ```
 dsmap.merge \
 --fname clean_data_scaled_with_pca.dsdata \
