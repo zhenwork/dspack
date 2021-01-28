@@ -4,8 +4,8 @@ dsdata.image
 ### Full parameter command line:
 ```
 dsimage.clean \
---fname raw_data.dsdata \
---fsave cleaned_data.dsdata \
+--fname ./data.dsdata \
+--fsave None \
 --read_dname image_file \
 --save_dname None \
 --save_dir ./datadir \
@@ -20,10 +20,10 @@ dsimage.clean \
 ```
 ### Description of each input:  
 - ```--fname```:  
-The file that contains your imported data files. It's usually the result of the [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md) step, which is the ```raw_data.dsdata```.
+The file that contains your imported data files. It's usually the result of the [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md) step, the default is the ```./data.dsdata```.
 
 - ```--fsave```:  
-The file to save the result of ```dsimage.clean```, for example, the ```cleaned_data.dsdata```.
+The file to save the result of ```dsimage.clean```, for example, the ```cleaned_data.dsdata```. The default value is the same as ```--fname```.
 
 - ```--read_dname```:  
 The dname of image files to be processed. Usually ```--read_dname``` is ```image_file``` because you have imported your diffraction patterns by running ```dsdata.import --image_file /PATH/TO/image_*.cbf```.
