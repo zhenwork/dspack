@@ -69,12 +69,12 @@ The setup process is simple, simply git clone the package and source the setup.s
 This step corresponds to the ```dsdata.import``` method, which is to record the experimental data, geometry file, indexing result, and other extra files. This step won't read out the real data, but just record required files for further processing. Some files are only required for diffuse data quality analysis, and not necessary for image pre-processing, you can then run ```dsdata.import``` again to add them later. The simplified command line is shown below,
 ```
 	dsdata.import \
-		--fname raw_data.dsdata \
-		--image_file /DATA/PATH/image_*.cbf \
-		--backg_file /DATA/PATH/blank_*.cbf \
-		--gxparms_file /DATA/PATH/GXPARM.XDS \
-		--detector_mask_file /DATA/PATH/user_mask.npy \
-		--extra_params /DATA/PATH/extra_json.js
+	--fname raw_data.dsdata \
+	--image_file /DATA/PATH/image_*.cbf \
+	--backg_file /DATA/PATH/blank_*.cbf \
+	--gxparms_file /DATA/PATH/GXPARM.XDS \
+	--detector_mask_file /DATA/PATH/user_mask.npy \
+	--extra_params /DATA/PATH/extra_json.js
 ```
 The detailed explanation of each variable, and more accepted inputs are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md).
 
@@ -82,17 +82,17 @@ The detailed explanation of each variable, and more accepted inputs are shown [h
 This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scale factors. The command line for ```dsimage.clean``` is shown below. Note that this process is quite slow, be sure to use MPI to speed it up by, for example, ```mpirun -n 10 dsimage.clean```
 ```
 	dsimage.clean \
-		--fname raw_data.dsdata \
-		--fsave cleaned_data.dsdata \
-		--read_dname image_file \
-		--apply_detector_mask \
-		--remove_bad_pixels \
-		--subtract_background \
-		--parallax_correction \
-		--polarization_correction \
-		--solid_angle_correction \
-		--detector_absorption_correction \
-		--remove_bragg_peaks
+	--fname raw_data.dsdata \
+	--fsave cleaned_data.dsdata \
+	--read_dname image_file \
+	--apply_detector_mask \
+	--remove_bad_pixels \
+	--subtract_background \
+	--parallax_correction \
+	--polarization_correction \
+	--solid_angle_correction \
+	--detector_absorption_correction \
+	--remove_bragg_peaks
 ```
 To turn off a substep in the pipeline, you can simply remove the name of a subsetp, such as the ```--parallax_correction``` to turn off the polarization correction step, and the ```--solid_angle_correction``` to turn off the solid angle correction. The corresponding command lines are shown below. You can also turn off multiple substeps if you want.
 <details><summary>Turn off the polarization correction</summary>
@@ -100,16 +100,16 @@ To turn off a substep in the pipeline, you can simply remove the name of a subse
    
 ```
 	dsimage.clean \
-		--fname raw_data.dsdata \
-		--fsave cleaned_data.dsdata \
-		--read_dname image_file \
-		--apply_detector_mask \
-		--remove_bad_pixels \
-		--subtract_background \
-		--parallax_correction \
-		--solid_angle_correction \
-		--detector_absorption_correction \
-		--remove_bragg_peaks
+	--fname raw_data.dsdata \
+	--fsave cleaned_data.dsdata \
+	--read_dname image_file \
+	--apply_detector_mask \
+	--remove_bad_pixels \
+	--subtract_background \
+	--parallax_correction \
+	--solid_angle_correction \
+	--detector_absorption_correction \
+	--remove_bragg_peaks
 ```
 </p>
 </details>
@@ -118,16 +118,16 @@ To turn off a substep in the pipeline, you can simply remove the name of a subse
    
 ```
 	dsimage.clean \
-		--fname raw_data.dsdata \
-		--fsave cleaned_data.dsdata \
-		--read_dname image_file \
-		--apply_detector_mask \
-		--remove_bad_pixels \
-		--subtract_background \
-		--parallax_correction \
-		--polarization_correction \
-		--detector_absorption_correction \
-		--remove_bragg_peaks
+	--fname raw_data.dsdata \
+	--fsave cleaned_data.dsdata \
+	--read_dname image_file \
+	--apply_detector_mask \
+	--remove_bad_pixels \
+	--subtract_background \
+	--parallax_correction \
+	--polarization_correction \
+	--detector_absorption_correction \
+	--remove_bragg_peaks
 ```
 </p>
 </details>
@@ -138,28 +138,28 @@ These simplified command lines use default image processing parameters, whose fu
    
 ```
 	dsimage.clean \
-		--fname raw_data.dsdata \
-		--fsave cleaned_data.dsdata \
-		--read_dname image_file \
-		--apply_detector_mask radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000 \
-		--remove_bad_pixels algorithm=2 sigma=5 window_size_px=11 \
-		--subtract_background \
-		--parallax_correction \
-		--polarization_correction \
-		--solid_angle_correction \
-		--detector_absorption_correction \
-		--remove_bragg_peaks replace_by_median=True window_size_px=11
+	--fname raw_data.dsdata \
+	--fsave cleaned_data.dsdata \
+	--read_dname image_file \
+	--apply_detector_mask radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000 \
+	--remove_bad_pixels algorithm=2 sigma=5 window_size_px=11 \
+	--subtract_background \
+	--parallax_correction \
+	--polarization_correction \
+	--solid_angle_correction \
+	--detector_absorption_correction \
+	--remove_bragg_peaks replace_by_median=True window_size_px=11
 ```
 </p>
 </details>
 
 ### Image scale
-Here we provide four different per-image scale factor factors, that are radial profile, water ring, overall, and Bragg scale factors. The standard pipeline uses the radial profile scale factor, whose command line is shown below. 
+Here we provide four different per-image scale factor factors, that are radial profile, water ring, overall, and Bragg scale factors. The standard pipeline uses the radial profile scale factor, whose command line is shown below.  
 	```
 	dsimage.scale \
-		--fname cleaned_data.dsdata \
-		--fsave cleaned_data_scale_water.dsdata \
-		--scale_by_radial_profile
+	--fname cleaned_data.dsdata \
+	--fsave cleaned_data_scaled.dsdata \
+	--scale_by_radial_profile
 	```
 To use other scale factors, simply indicate the name of that scale factor, as shown below. However, you need extra files (such as the dials report file as mentioned in [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md)) to provide the Bragg intensity scale factor.
 <details><summary>Water ring scale factor</summary>
@@ -167,12 +167,35 @@ To use other scale factors, simply indicate the name of that scale factor, as sh
    
 ```
     	dsimage.scale \
-		--fname cleaned_data.dsdata \
-		--fsave cleaned_data_scale_water.dsdata \
-		--scale_by_water_ring_intensity
+	--fname cleaned_data.dsdata \
+	--fsave cleaned_data_scaled.dsdata \
+	--scale_by_water_ring_intensity
 ```
 </p>
 </details>
+<details><summary>Overall scale factor</summary>
+<p>
+   
+```
+    	dsimage.scale \
+	--fname cleaned_data.dsdata \
+	--fsave cleaned_data_scaled.dsdata \
+	--scale_by_overall_intensity
+```
+</p>
+</details>
+<details><summary>Bragg intensity scale factor</summary>
+<p>
+   
+```
+    	dsimage.scale \
+	--fname cleaned_data.dsdata \
+	--fsave cleaned_data_scaled.dsdata \
+	--scale_by_bragg_intensity
+```
+</p>
+</details>
+These are simplified command lines with default parameters, the full-parameter command lines and explaination for each input parameter are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md).
 
 ### Radial profile variance removal
 ### Merge to volume
