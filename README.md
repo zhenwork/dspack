@@ -20,7 +20,7 @@ Get started with dspack
     
     
 # Purpose
-This package **dspack** is developed to study diffuse scattering data. The main function is to pre-process and map two-dimensional diffraction patterns into three-dimensional reciprocal space, and then extract the anisotropic diffuse scattering data in the dataset. It can read diffraction patterns and other supporting files, perform per-image preprocesses, map and merge diffraction patterns into a three-dimensional volume, perform operations to the diffraction volume to extract diffuse scattering features, and finally evaluate the quality and calculate statistics of the merged diffuse volume using both self-developed functions and existing softwares. This package supports the option to turn on or turn off each step, and also accepts different input variables from the user, in order to compare different methods in the workflow. The goal is to develop a simple and flexible package to extract and analyze the diffuse scattering data.
+This package **dspack** is developed to analyze the diffuse scattering data. The main goal is to build a simple and flexible pipeline to extract 3D diffuse map from a set of 2D diffraction patterns. This package will read diffraction patterns and other supporting files, perform per-image preprocesses, map and merge 2D diffraction patterns into a 3D diffraction volume, perform operations to the diffraction volume to extract symmetrized anisotropic diffuse data, evaluate the diffuse data quality, and model the diffuse map with the liquid-like motions (LLM) model. This package supports options to turn on or turn off each substep, and also accepts different input variables from users, enabling us to compare various data processing choices.
 
 # Requirements
 ### Conda packages
@@ -73,7 +73,7 @@ dsdata.import \
 The detailed explanation of each variable, and more accepted inputs are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md).
 
 ### Image clean
-This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scaling factors. The simplified command line is shown below,
+This step corresponds to the ```dsimage.clean``` method, which includes **five** image pre-processing methods: (1) user-defined detector masking, (2) deeper bad pixel removal, (3) non-crystal background image subtraction, (4) pixel intensity and position corrections, and (4) Bragg peak cleaning. Another image preprocessing method (scaling and radial profile variance removal) is designed separately to save time for testing multiple scale factors. The command line for ```dsimage.clean``` is shown below. Note that this process is quite slow, be sure to use MPI to speed it up by, for example, ```mpirun -n 10 dsimage.clean *** ```
 ```
 dsimage.clean \
 --fname raw_data.dsdata \
