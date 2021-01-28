@@ -11,16 +11,16 @@ dsmap.deploy.lunus.llm \
 
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains all required data files. It is usually the result from the ```dsmap.operate``` step, which is the ```cleaned_data_scaled_with_pca_map.dsdata```.
+The file name that contains your data files. It's usually the result of [```dsmap.operate```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-OPERATE.md), which is ```cleaned_data_scaled_with_pca_map.dsdata```.
 
 - ```--read_dname```:  
-The dataset name of diffraction volume to be processed in ```--fname```. The default ```--read_dname``` is ```merge_volume```.
+The dname of diffraction volume to be processed in ```--fname```. The default ```--read_dname``` is ```merge_volume```.
 
 - ```--pdb_dname```:
-The dname of imported PDB files. You may import multiple PDB files and save them as different pdb dnames with the ```dsdata.import``` method, such as the phenix-refined PDB and refmac5-refined PDB files. You need to specify which one to use for the LLM model.
+The dname of PDB file to use. You may import multiple PDB files and save them as different pdb dnames in the [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md) step, such as the phenix-refined and refmac5-refined PDB files. You need to specify which one to use for the LLM model.
 
 - ```--lunus_data```:  
-The exported files for LLM in Lunus will be saved in ```--lunus_data```, so you just need to specify ```--lunus_data``` when you are running the LLM model later in ```dsana.stats.lunus.llm```.
+The exported files for LLM will be saved in ```--lunus_data```, so you only need to specify ```--lunus_data``` next time when you are running the LLM model with [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DSANA.md).
 
 
 # dsmap.deploy.phenix.merge_stats
@@ -38,16 +38,16 @@ dsmap.deploy.phenix.merge_stats \
 
 ### Description of each input:  
 - ```--fname```:  
-The file name that contains all required data files. It is usually the result from the ```dsmap.operate``` step, which is the ```cleaned_data_scaled_with_pca_map.dsdata```.
+The file name that contains your data files. It's usually the result of [```dsmap.operate```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-OPERATE.md), which is ```cleaned_data_scaled_with_pca_map.dsdata```.
 
 - ```--read_dname```:  
-The dataset name of diffraction volume to be processed in ```--fname```. The default ```--read_dname``` is ```merge_volume```.
+The dname of diffraction volume to be processed in ```--fname```. The default ```--read_dname``` is ```merge_volume```.
 
 - ```--pdb_dname```:
-The dname of imported PDB files. You may import multiple PDB files and save them as different pdb dnames with the ```dsdata.import``` method, such as the phenix-refined PDB and refmac5-refined PDB files. You need to specify which one to use for phenix.merging_statistics.
+The dname of imported PDB file. You may import multiple PDB files and save them as different pdb dnames  in the [```dsdata.import```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DATA-IMPORT.md) step, such as the phenix-refined and refmac5-refined PDB files. You need to specify which one to use for [phenix.merging_statistics](https://www.phenix-online.org/documentation/reference/unmerged_data.html).
 
 - ```--save_dname```:  
-The exported files for phenix.merging_statistics will be saved in ```--save_dname```, so you just need to specify ```--save_dname``` when you are running the PHENIX model later in ```dsana.stats.phenix.merge_stats```.
+The exported files for [phenix.merging_statistics](https://www.phenix-online.org/documentation/reference/unmerged_data.html) will be saved in ```--save_dname```, so that you only need to specify ```--save_dname``` next time when you are running the PHENIX model later in [```dsana.stats.phenix.merge_stats```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-DSANA.md).
 
 - ```--vmin```:  
 The minimum voxel intensity to keep for running CChalf. The default number is -100.
