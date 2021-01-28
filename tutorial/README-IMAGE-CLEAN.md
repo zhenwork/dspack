@@ -7,6 +7,8 @@ dsimage.clean \
 --fname raw_data.dsdata \
 --fsave cleaned_data.dsdata \
 --read_dname image_file \
+--save_dname None \
+--save_dir ./datadir \
 --apply_detector_mask radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000 \
 --remove_bad_pixels algorithm=2 sigma=5 window_size_px=11 \
 --subtract_background \
@@ -26,16 +28,22 @@ The new file to save after the ```dsimage.clean``` step, for example, the ```cle
 - ```--read_dname```:  
 The dataset name of image files to be preprocessed in ```--fname``` file. Usually the ```read_dname``` is ```image_file``` because you have imported your diffraction data by running ```dsdata.import --image_file /DATA/PATH/image_*.cbf```.
 
+- ```--save_dname```:
+The dataset name of the processed image files after ```dsimage.clean```, which is the same as ```--read_dname``` in default setup. However, users can choose to use a different dataset name such as ```process_image_files```, but then you need to be careful to set the right ```--read_dname``` later for other steps.
+
+- ```--save_dir```:
+The intermediate data will be saved in this folder. The default folder is ```./datadir```.
+
 - ```--apply_detector_mask```:  
 The image preprocessing step (1), which will apply the user-defined detector mask, and then filter out pixels with intensity beyong range (```value_vmin```, ```value_vmax```), or with radial positions beyond range (```radius_rmin_px```, ```radius_rmax_px```) to the detector center. If you have and imported the background diffraction patterns, they will automatically be processed in the same manner. The default parameters are shown below,  
-      ```
+```
       radius_rmin_px=40 radius_rmax_px=None value_vmin=0 value_vmax=10000
-      ```
+```
 - ```--remove_bad_pixels```:  
 The image preprocessing step (2), which filters out each pixel with extreme intensity beyond ```sigma``` times the standard deviation to the mean intensity inside a square box (```window_size_px```, ```window_size_px```) centered at that pixel. If you have and imported the background diffraction patterns, they will automatically be processed in the same manner. The default parameters are shown below, where currently only algorithm 2 is suggested.  
-      ```
+```
       algorithm=2 sigma=5 window_size_px=11
-      ```
+```
 - ```--subtract_background```:  
 The image preprocessing step (3), which will subtract the non-crystal background patterns from crystal background patterns in order. It will cause errors if you don't have or import your background patterns, or if you have different number of background patterns. No input parameters are required.  
 
