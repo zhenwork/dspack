@@ -259,7 +259,7 @@ To run the LLM model, we need to provide the PDB file, export the 3D diffuse map
 ```
 </p>
 </details>
-##### Phenix CChalf
+##### Phenix CChalf  
 Similarly, to run PHENIX for CChalf, you need to import the PDB file, export the unsymmetrized anisotropic map to PHENIX accepted format. The command lines are shown below, and the detailed explaination for data deploy and analysis are [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DEPLOY.md) and [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DSANA.md).
 <details><summary>Import the PDB file</summary>
 <p>
