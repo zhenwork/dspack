@@ -1,4 +1,4 @@
-dsdata.image
+dsimage.clean
 =====
 
 ### Full parameter command line:
