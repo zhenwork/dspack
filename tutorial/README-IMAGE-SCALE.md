@@ -14,7 +14,7 @@ dsimage.scale \
 --scale_by_bragg_intensity
 (select one scale factor only)
 ```
-There are four lines with four different scale factors, but you can only enable one of them, and delete other three lines. For computational efficiency, the scale factor of a dataset will be saved as a numpy array and recorded to ```--save_dname``` in file ```--fsave```, rather than be multipled to each image because saving new images is slow. Other steps such as [```dsimage.pca```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md) or [```dsmap.merge```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md) will automatically look for ```--save_dname``` to read out the scale factor.
+There are four lines with four different scale factors, but you can only enable one of them, and delete other three lines. For computational efficiency, the scale factor of a dataset will be saved as a numpy array and recorded to ```--save_dname``` in file ```--fsave```, rather than be multiplied to each image because saving new images is slow. Other steps such as [```dsimage.pca```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md) or [```dsmap.merge```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-VOLUME-MERGE.md) will automatically look for ```--save_dname``` to read out the scale factor.
 
 ### Description of each input:  
 - ```--fname```:  
@@ -30,7 +30,7 @@ The dname of diffraction image files to be scaled in ```--fname```. Usually the 
 The dname to save the calculated scale factor, which is ```scale_factor``` in default. You can use other dnames to record the scale factor, but you will need to indicate this dname later in other steps that require the scale factor, such as [```dsimage.pca```](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md).
 
 - ```--scale_by_radial_profile```:  
-The scaling method (1), which uses the image radial intensity profile to scale each image, and the default resolution range of the radial profle is shown below.  
+The scaling method (1), which uses the image radial intensity profile to scale each image, and the default resolution range of the radial profile is shown below.  
 ```
     radius_rmin_px=None radius_rmax_px=None radius_rmin_A=50 radius_rmax_A=1.4
 ```

@@ -14,7 +14,7 @@ dsana.stats.cc.map \
 --rmax_A 1.4 \
 --rmin_A 50 
 ```
-Note that the comparsion is performed for the symmetrized anisotropic diffuse maps only.
+Note that the comparison is performed for the symmetrized anisotropic diffuse maps only.
 
 ### Description of each input:  
 - ```--fname```:  

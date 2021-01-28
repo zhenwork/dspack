@@ -34,4 +34,4 @@ To perform the isotropic component subtraction. Basically no parameters are need
 ```
 
 - ```--coordinate_conversion```:  
-This option is used for visualization only. The lattice vectors are not necessarly orthogonal, so we need to convert the HKL to XYZ lattice to visualize the diffraction volume.
+This option is used for visualization only. The lattice vectors are not necessarily orthogonal, so we need to convert the HKL to XYZ lattice to visualize the diffraction volume.
