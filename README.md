@@ -188,7 +188,7 @@ dsimage.scale \
 ```
 </p>
 </details>
-These are simplified command lines with default parameters, the full-parameter command line and explaination for each parameter are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md).
+These are simplified command lines with default parameters, the full-parameter command line and explaination for each parameter are shown [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-SCALE.md).  
 
 ### Radial profile variance removal
 This step removes the variance of the radial intensity profiles of a dataset. The radial profile variance is calculated using three largest PCA components, first introduced by [Peck et al.](https://doi.org/10.1107/S2052252518001124) The command line is shown below, and the detailed explanation for each parameter is [here](https://github.com/zhenwork/dspack/blob/main/tutorial/README-IMAGE-PCA.md).
@@ -223,7 +223,7 @@ dsmap.operate \
 
 ##### Lunus LLM  
 
-To run the LLM model, we need to provide the PDB file, export the 3D diffuse map to the Lunus accepted format. The command lines are shown below, and the detailed explaination for data export and analysis are [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DEPLOY.md) and [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DSANA.md).
+To run the LLM model, we need to provide the PDB file, export the 3D diffuse map to the [Lunus](https://github.com/mewall/lunus) accepted format. The command lines are shown below, and the detailed explaination for data export and analysis are [```dsmap.deploy.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DEPLOY.md) and [```dsana.stats.lunus.llm```](https://github.com/zhenwork/dspack/edit/main/tutorial/README-DSANA.md).
 <details><summary>Import the PDB file</summary>
 <p>
    
