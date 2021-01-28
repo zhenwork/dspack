@@ -3,7 +3,7 @@ dsana.stats.cc.map
 
 ### Full parameter command line:
 ```
-	dsana.stats.cc.map \
+dsana.stats.cc.map \
 --fname clean_data_scaled_with_pca_map_1.dsdata clean_data_scaled_with_pca_map_2.dsdata clean_data_scaled_with_pca_map_3.dsdata \
 --fsave cc_map.out \
 --read_dname merge_volume \
@@ -18,19 +18,19 @@ Note that the comparsion is performed for the symmetrized anisotropic diffuse ma
 
 ### Description of each input:  
 - ```--fname```:  
-A list of files to compare. Usually these files are diffuse files (such as ```clean_data_scaled_with_pca_map.dsdata```) from multiple datasets or various processing choices to compare.
+A list of files to compare, such as ```clean_data_scaled_with_pca_map.dsdata``` files from multiple datasets or various processing choices.
 
 - ```--fsave```:  
 The CC statistics for N files will be kept in a N\*N matrix, and saved to ```--fsave``` file as a numpy array.
 
 - ```--read_dname```:
-The dname to compare in the ```--fname``` input files, the default is ```merge_volume```.
+The dname to compare in ```--fname``` files, the default is ```merge_volume```.
 
 - ```pdb_dname```:  
-The dname of PDB file for CC calculation, the default is ```pdb_refmac5```.
+The dname of PDB file for CC calculation, the default is ```pdb_file```.
 
 - ```--nshells```:  
-The number of shells to divide for phenix.merging_statistics. The default is 15.
+The number of shells to divide for the calculation of resolution-dependent CC. The default is 15.
 
 - ```vmin```:  
 The minimum voxel value to keep for CC calculation. The default is -100.
