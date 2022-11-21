@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+import os,sys
+import numpy as np
+
+DSPACK_HOME=os.environ.get("DSPACK_HOME")
+if not DSPACK_HOME:
+    print("!!!! No DSPACK_HOME")
+    sys.exit(1)
+if DSPACK_HOME not in sys.path:
+    sys.path.append(DSPACK_HOME)
+    
+from sys import argv
+fname = argv[1]
+fsave = argv[2]
+
+import scripts.fsystem
+import scripts.manager
+
+image_obj = scripts.manager.ImageAgent()
+image_obj.loadImage(fname)
+
+scripts.fsystem.PVmanager.modify(image_obj.__dict__, fsave)
+print("#### CBF to H5PY: %s"%fsave)

@@ -1,0 +1,279 @@
+origin: 40 41 49
+82 84 100 688800
+Initializing the hkl file data...
+Reading the hkl file data...
+...done
+Writing file
+Done writing file
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  1 , (gamma,sigma) = ( 5.0 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.373391
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  2 , (gamma,sigma) = ( 5.0 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.373391
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  3 , (gamma,sigma) = ( 6.0 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.474382
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  4 , (gamma,sigma) = ( 7.618034 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.557799
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  5 , (gamma,sigma) = ( 8.174118215647912 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.567692
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  6 , (gamma,sigma) = ( 9.073881383429567 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572549
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  7 , (gamma,sigma) = ( 8.94108129449491 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572474
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  8 , (gamma,sigma) = ( 10.52972878084799 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.565995
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  9 , (gamma,sigma) = ( 9.073881383429567 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572549
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  10 , (gamma,sigma) = ( 9.629965590431892 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.571383
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  11 , (gamma,sigma) = ( 8.730202445284679 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.571935
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  12 , (gamma,sigma) = ( 9.114620197273863 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572546
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  13 , (gamma,sigma) = ( 9.033142569585271 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572543
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  14 , (gamma,sigma) = ( 9.073881383429567 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572549
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  15 , (gamma,sigma) = ( 9.073881383429567 , 1.3599999999999999 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.0663875
+Function iteration =  16 , (gamma,sigma) = ( 9.073881383429567 , -1.2580339999999999 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  17 , (gamma,sigma) = ( 9.073881383429567 , 0.36 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.572549
+Function iteration =  18 , (gamma,sigma) = ( 9.073881383429567 , -0.25803397484400004 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  19 , (gamma,sigma) = ( 9.073881383429567 , 0.741966 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.29777
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  20 , (gamma,sigma) = ( 9.073881383429567 , 0.33243046638111706 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.586454
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  21 , (gamma,sigma) = ( 9.073881383429567 , 0.10689312562412395 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.639576
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  22 , (gamma,sigma) = ( 9.073881383429567 , 0.1094241943778827 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.639473
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  23 , (gamma,sigma) = ( 9.073881383429567 , 0.08487024116191666 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640074
+Function iteration =  24 , (gamma,sigma) = ( 9.073881383429567 , -0.046107510608999314 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  25 , (gamma,sigma) = ( 9.073881383429567 , 0.080527957180545 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640129
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  26 , (gamma,sigma) = ( 9.073881383429567 , 0.06591236700902281 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640195
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  27 , (gamma,sigma) = ( 9.073881383429567 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640226
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  28 , (gamma,sigma) = ( 9.073881383429567 , 0.07176471092544323 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640185
+Function iteration =  29 , (gamma,sigma) = ( 13.147762766859135 , -0.22229351330213487 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  30 , (gamma,sigma) = ( 9.073881383429567 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.640226
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  31 , (gamma,sigma) = ( 10.073881383429567 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.629121
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  32 , (gamma,sigma) = ( 7.4558473834295675 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647342
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  33 , (gamma,sigma) = ( 7.406521653496293 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647083
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  34 , (gamma,sigma) = ( 7.4558473834295675 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647342
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  35 , (gamma,sigma) = ( 8.073881358273567 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647441
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  36 , (gamma,sigma) = ( 8.455847367882305 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.645424
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  37 , (gamma,sigma) = ( 7.779585234074308 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648039
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  38 , (gamma,sigma) = ( 7.766642272570756 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648049
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  39 , (gamma,sigma) = ( 7.678866727538219 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647989
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  40 , (gamma,sigma) = ( 7.733114998736858 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648024
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  41 , (gamma,sigma) = ( 7.753569881452168 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648038
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  42 , (gamma,sigma) = ( 7.766642272570756 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648049
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  43 , (gamma,sigma) = ( 7.766642272570756 , 1.0688532433489326 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.0968798
+Function iteration =  44 , (gamma,sigma) = ( 7.766642272570756 , -1.5491807566510674 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  45 , (gamma,sigma) = ( 7.766642272570756 , 0.06885324334893256 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648049
+Function iteration =  46 , (gamma,sigma) = ( 7.766642272570756 , -0.5491807314950674 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  47 , (gamma,sigma) = ( 7.766642272570756 , 0.4508192433489326 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.495661
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  48 , (gamma,sigma) = ( 7.766642272570756 , 0.12202939809046896 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.645387
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  49 , (gamma,sigma) = ( 7.766642272570756 , 0.07185379661290364 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647923
+Function iteration =  50 , (gamma,sigma) = ( 7.766642272570756 , -0.16721472188633077 ), overall correlation =  0 , anisotropic correlation (target) =  0
+Function iteration =  51 , (gamma,sigma) = ( 7.766642272570756 , -0.060226869102147335 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  52 , (gamma,sigma) = ( 7.766642272570756 , 0.01954902911644337 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648648
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  53 , (gamma,sigma) = ( 7.766642272570756 , 0.03355458923066143 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648566
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  54 , (gamma,sigma) = ( 7.766642272570756 , 0.010134655709636398 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648654
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  55 , (gamma,sigma) = ( 7.766642272570756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648662
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  56 , (gamma,sigma) = ( 7.766642272570756 , 0.01420657733547498 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64865
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  57 , (gamma,sigma) = ( 7.766642272570756 , 0.012056548736779686 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648639
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  58 , (gamma,sigma) = ( 7.766642272570756 , 0.012857037662167163 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648621
+Function iteration =  59 , (gamma,sigma) = ( 6.459403161711945 , -0.04203033224862268 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  60 , (gamma,sigma) = ( 7.766642272570756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648662
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  61 , (gamma,sigma) = ( 8.766642272570756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.643152
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  62 , (gamma,sigma) = ( 6.1486082725707565 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.621323
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  63 , (gamma,sigma) = ( 7.766642272570756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648662
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  64 , (gamma,sigma) = ( 7.148608297726756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64609
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  65 , (gamma,sigma) = ( 8.148608272570756 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647568
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  66 , (gamma,sigma) = ( 7.7537933422471195 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648669
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  67 , (gamma,sigma) = ( 7.713848478306791 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648693
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  68 , (gamma,sigma) = ( 7.497945947491357 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648338
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  69 , (gamma,sigma) = ( 7.631381052221343 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648636
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  70 , (gamma,sigma) = ( 7.682348725434637 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648678
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  71 , (gamma,sigma) = ( 7.71437641625943 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64869
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  72 , (gamma,sigma) = ( 7.699336805559518 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648678
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  73 , (gamma,sigma) = ( 7.708305512714206 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648694
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  74 , (gamma,sigma) = ( 7.710977465401041 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648693
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  75 , (gamma,sigma) = ( 7.704879771517159 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648693
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  76 , (gamma,sigma) = ( 7.707722145105641 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648696
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  77 , (gamma,sigma) = ( 7.706704154027985 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648688
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  78 , (gamma,sigma) = ( 7.707722145105641 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648696
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  79 , (gamma,sigma) = ( 7.707722145105641 , 1.013411455550155 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.111294
+Function iteration =  80 , (gamma,sigma) = ( 7.707722145105641 , -1.604622544449845 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  81 , (gamma,sigma) = ( 7.707722145105641 , 0.013411455550154938 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648696
+Function iteration =  82 , (gamma,sigma) = ( 7.707722145105641 , -0.604622519293845 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  83 , (gamma,sigma) = ( 7.707722145105641 , 0.39537745555015497 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.535718
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  84 , (gamma,sigma) = ( 7.707722145105641 , 0.09447104819646576 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.647086
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  85 , (gamma,sigma) = ( 7.707722145105641 , 0.043110905196295124 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648428
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  86 , (gamma,sigma) = ( 7.707722145105641 , 0.006880294870680097 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648721
+Function iteration =  87 , (gamma,sigma) = ( 7.707722145105641 , -0.00319953040161855 ), overall correlation =  0 , anisotropic correlation (target) =  0
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  88 , (gamma,sigma) = ( 7.707722145105641 , 0.003030144330721272 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648583
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  89 , (gamma,sigma) = ( 7.707722145105641 , 0.009645029974088351 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648684
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  90 , (gamma,sigma) = ( 7.707722145105641 , 0.005409668269534184 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64867
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  91 , (gamma,sigma) = ( 7.707722145105641 , 0.007936329679188534 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648691
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  92 , (gamma,sigma) = ( 7.707722145105641 , 0.006318565510346797 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64869
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  93 , (gamma,sigma) = ( 7.707722145105641 , 0.0072836642623468305 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648696
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  94 , (gamma,sigma) = ( 7.707722145105641 , 0.006665733353831028 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648679
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  95 , (gamma,sigma) = ( 7.707722145105641 , 0.007034368263737473 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648638
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  96 , (gamma,sigma) = ( 7.707722145105641 , 0.006798339666335325 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.648701
+anisolt tmp_sym.lat tmp_sym_aniso.lat 57.318,58.245,69.095,90.0,112.74,90.0
+corrlt tmp_sym_aniso.lat data.lat
+Function iteration =  97 , (gamma,sigma) = ( 7.707722145105641 , 0.006945606487474845 ), overall correlation =  0.0 , anisotropic correlation (target) =  0.64868
+Optimization terminated successfully.
+         Current function value: -0.648721
+         Iterations: 3
+         Function evaluations: 97
+Refined gamma =  7.707722145105641 , sigma =  0.006880294870680097

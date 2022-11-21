@@ -1,0 +1,118 @@
+#!/bin/bash
+
+# STREAM=
+# UCELL=
+: ${workdir:="./"}
+: ${max_res_A:=1.4}
+: ${b_factor:="three"}
+: ${symop:=-1}
+: ${model:="llm"}
+    
+## get parameters from the inputs
+for i in "$@"; do
+    if [[ ${i:0:4} = "hkl=" ]]; then
+        hkl_file=${i:4:1000} 
+    elif [[ ${i:0:8} = "workdir=" ]]; then
+        workdir=${i:8:1000}
+    elif [[ ${i:0:10} = "max_res_A=" ]]; then
+        max_res_A=${i:10:1000}
+    elif [[ ${i:0:9} = "pdb_file=" ]]; then
+        pdb_file=${i:9:1000}
+    elif [[ ${i:0:9} = "b_factor=" ]]; then
+        b_factor=${i:9:1000}
+    elif [[ ${i:0:10} = "unit_cell=" ]]; then
+        unit_cell=${i:10:1000}
+    elif [[ ${i:0:6} = "model=" ]]; then
+        model=${i:6:1000}
+    else
+        :
+    fi
+done
+
+
+cd $workdir && makelt template.lat $unit_cell $max_res_A
+cd $workdir && hkl2lat $hkl_file exp_nosym_nosub.lat template.lat
+cd $workdir && symlt exp_nosym_nosub.lat exp_sym_nosub.lat $symop
+cd $workdir && anisolt exp_sym_nosub.lat exp_sym_aniso.lat $unit_cell
+cd $workdir && cullreslt exp_sym_aniso.lat exp_sym_aniso_cull.lat 1000. $max_res_A $unit_cell
+cd $workdir && cp exp_sym_aniso_cull.lat data.lat
+
+
+if [[ ${b_factor} = "three" ]]; then
+    bfacs="zero"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+
+
+    bfacs="iso"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+
+
+    bfacs="aniso"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+    
+elif [[ ${b_factor} = "zero" ]]; then
+    bfacs="zero"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+    
+elif [[ ${b_factor} = "iso" ]]; then
+    bfacs="iso"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+    
+elif [[ ${b_factor} = "aniso" ]]; then
+    bfacs="aniso"
+    cd $workdir && rm -f $workdir/lunus_${model}_${bfacs}_stats.out && libtbx.python ${LUNUS_HOME}/scripts/refine_llm.py symop=$symop model=$model pdb=$pdb_file bfacs=${bfacs} >> $workdir/lunus_${model}_${bfacs}_stats.out
+    cp $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.lat
+    cp $workdir/tmp_sym.lat $workdir/lunus_${model}_${bfacs}_sym_nosub.lat
+    cp $workdir/tmp.lat $workdir/lunus_${model}_${bfacs}_nosym_nosub.lat
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat 1000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul.lat $workdir/lunus_${model}_${bfacs}_sym_aniso.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat 100
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_100.hkl
+    mulsclt $workdir/tmp_sym_aniso.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat 10000
+    lat2hkl $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.lat $workdir/lunus_${model}_${bfacs}_sym_aniso_mul_10000.hkl
+fi
